@@ -36,4 +36,9 @@ class ContractDate
     {
         return new ContractDate($date);
     }
+
+    public function __get($name)
+    {
+        return $this->$name;
+    }
 }

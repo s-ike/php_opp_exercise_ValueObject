@@ -26,4 +26,14 @@ class SalesTax
     {
         return 0 <= $rate;
     }
+
+    public function isAfterEnforcementDate(ContractDate $contract_date) :bool
+    {
+        return $this->enforcement_date <= $contract_date->date;
+    }
+
+    public function __get($name)
+    {
+        return $this->$name;
+    }
 }
