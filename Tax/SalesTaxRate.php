@@ -5,16 +5,9 @@ class SalesTaxRate
 {
     private $rate;
 
-    public function __construct(float $rate)
+    public function __construct(ContractDate $contract_date)
     {
-        if (! $this->isValid($rate)) {
-            throw new \InvalidArgumentException('AmountExcludingTax class construct is only accepts positive number. Input was: '.$rate);
-        }
+        // $rate を算出
         $this->rate = $rate;
-    }
-
-    private function isValid(float $rate) :bool
-    {
-        return 0 <= $rate;
     }
 }
