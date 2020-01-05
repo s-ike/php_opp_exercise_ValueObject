@@ -1,7 +1,7 @@
 <?php
 namespace Tax;
 
-class SalesTaxRate
+class AppliedSalesTaxRate
 {
     private $rate;
 
