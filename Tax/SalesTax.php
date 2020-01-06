@@ -6,9 +6,9 @@ class SalesTax
     private $enforcement_date;
     private $rate;
 
-    public function __construct(DateTime $date, float $rate)
+    public function __construct(\DateTime $date, float $rate)
     {
-        if (! isValidRate($rate)) {
+        if (! $this->isValidRate($rate)) {
             throw new \InvalidArgumentException('AmountExcludingTax class construct is only accepts positive integers. Input was: '.$rate);
         }
         $this->enforcement_date = $date;

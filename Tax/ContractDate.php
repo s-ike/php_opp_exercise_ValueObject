@@ -10,7 +10,7 @@ class ContractDate
      *
      * @param DateTime $date
      */
-    private function __construct(DateTime $date)
+    private function __construct(\DateTime $date)
     {
         $this->date = $date;
     }
@@ -20,9 +20,10 @@ class ContractDate
      *
      * @return ContractDate
      */
-    public function conclude() :ContractDate
+    public static function conclude() :ContractDate
     {
-        return new ContractDate(new DateTime(null, new DateTimeZone('Asia/Tokyo')));
+        $test = new \DateTime(null, new \DateTimeZone('Asia/Tokyo'));
+        return new ContractDate(new \DateTime(null, new \DateTimeZone('Asia/Tokyo')));
     }
 
     /**
@@ -32,7 +33,7 @@ class ContractDate
      *
      * @return ContractDate
      */
-    public function reconstruct(DateTime $date) :ContractDate
+    public static function reconstruct(\DateTime $date) :ContractDate
     {
         return new ContractDate($date);
     }
