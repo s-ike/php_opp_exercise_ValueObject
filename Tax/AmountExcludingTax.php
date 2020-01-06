@@ -41,11 +41,11 @@ class AmountExcludingTax
     {
         // 税抜き金額同士を加算する
         // 引数には同じAmountExcludingTaxだけ渡せるよう設計
-        return new AmountExcludingTax($this->amount + $amount_excluding_tax->amount);
+        return new AmountExcludingTax($this->amount + $amount_excluding_tax->getAmount());
     }
 
-    public function __get($name)
+    public function getAmount() :int
     {
-        return $this->$name;
+        return $this->amount;
     }
 }

@@ -15,7 +15,7 @@ class AppliedSalesTaxRate
         $this->rate = $this->sales_tax_apply_rule->applyRule($contract_date);
     }
 
-    public function getRate()
+    public function getRate() :float
     {
         return $this->rate;
     }
